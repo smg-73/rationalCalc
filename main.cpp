@@ -22,7 +22,9 @@ void Calculator()
     cin >> d2;
 }
 
+
 int main()
 {
+  
     return 0;
 }
