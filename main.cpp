@@ -5,7 +5,6 @@ using namespace std;
 //ask user to input a number for numerator and denominatior for each fraction
 void Calculator()
 {
-
     int n1, d1, n2, d2; //initializes variables used for fraction
 
     //ask user to input number and stores it in respective variable
