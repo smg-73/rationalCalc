@@ -28,7 +28,25 @@ void Add(int &n1, int &d1, int &n2, int &d2)
 
     if (d1 < 0 && n1 >= 0) //checks if denominator is a negative int while numerator is positive
     {
-        n1 = n1 * (-1); //switches the signs of numerator and denominator by -1
+        n1 = n1 * (-1); //switches the signs of numerator and denominator
+        d1 = d1 * (-1); //to avoid having a negative int in denominator
+    }
+}
+
+//will subtract the fractions given by user
+void Subtract(int &n1, int &d1, int &n2, int &d2)
+{
+    n1 = (n1 * d2) - (n2 * d1); //cross multiplies and substracts the numerators
+    d1 = d1 * d2;               //multiplies straight across for denominators
+
+    int gcd = GCD(n1, d1); //calls function to get the GCD
+
+    n1 = n1 / gcd; //divides by the gcd to get simpliest form.
+    d1 = d1 / gcd;
+
+    if (d1 < 0 && n1 >= 0) //checks if denominator is a negative int while numerator is positive
+    {
+        n1 = n1 * (-1); //switches the signs of numerator and denominator
         d1 = d1 * (-1); //to avoid having a negative int in denominator
     }
 }
