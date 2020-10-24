@@ -1,8 +1,42 @@
 #include <iostream>
 using namespace std;
 
+//fucntion to find greatest common denominator for the fraction
+int GCD(int m, int n)
+{
+    int r = m % n;
+    if (r == 0)
+    {
+        return n;
+    }
+    else
+    {
+        return GCD(n, r);
+    }
+}
+
+// will add the fractions given by user
+void Add(int &n1, int &d1, int &n2, int &d2)
+{
+    n1 = (n1 * d2) + (n2 * d1); //cross multiplies and adds the numerators
+    d1 = d1 * d2;               //multiplies straight across for denominators
+
+    int gcd = GCD(n1, d1); //calls function to get the GCD and stores return value in variable
+
+    n1 = n1 / gcd; //divides by the gcd to get simpliest form.
+    d1 = d1 / gcd;
+
+    if (d1 < 0 && n1 >= 0) //checks if denominator is a negative int while numerator is positive
+    {
+        n1 = n1 * (-1); //switches the signs of numerator and denominator by -1
+        d1 = d1 * (-1); //to avoid having a negative int in denominator
+    }
+}
+
 //main calculator function
-//ask user to input a number for numerator and denominatior for each fraction
+//Recieves input from user for fractions
+//displays menu of operations to choose from
+//will call corresponding operation fuction based on users input
 void Calculator()
 {
     int n1, d1, n2, d2; //initializes variables used for fraction
@@ -24,7 +58,7 @@ void Calculator()
     //will display error message if true.
     if (d1 == 0 || d2 == 0)
     {
-        cout << "\nERROR: Cannot Divide By Zero!\n";
+        cout << "\nERROR: Cannot Have Zero in Denominator! \n";
     }
 
     else
@@ -41,9 +75,10 @@ void Calculator()
         int MenuSelection;    //initializes variable for users menu selection
         cin >> MenuSelection; //stores users selection in variable
     }
+}
 
-    int main()
-    {
+int main()
+{
 
-        return 0;
-    }
+    return 0;
+}
