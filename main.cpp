@@ -140,7 +140,7 @@ void Calculator()
 
             Add(n1, d1, n2, d2);
 
-            cout << "\nyour solution is: " << n1 << '/' << d1;
+            cout << "\nYour solution is: " << n1 << '/' << d1;
         }
 
         //if user chooses SUBTRACT operation
@@ -150,7 +150,7 @@ void Calculator()
 
             Subtract(n1, d1, n2, d2);
 
-            cout << "\nyour solution is: " << n1 << '/' << d1;
+            cout << "\nYour solution is: " << n1 << '/' << d1;
         }
 
         //if user chooses MULTIPLY operation
@@ -160,7 +160,7 @@ void Calculator()
 
             Multiply(n1, d1, n2, d2);
 
-            cout << "\nyour solution is: " << n1 << '/' << d1;
+            cout << "\nYour solution is: " << n1 << '/' << d1;
         }
 
         //if user chooses DIVIDE operation
@@ -170,7 +170,7 @@ void Calculator()
 
             Divide(n1, d1, n2, d2);
 
-            cout << "\nyour solution is: " << n1 << '/' << d1;
+            cout << "\nYour solution is: " << n1 << '/' << d1;
         }
         else
         {
