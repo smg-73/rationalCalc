@@ -136,45 +136,45 @@ void Calculator()
         //if user chooses ADD operation
         if (MenuSelection == 1)
         {
-            cout << "\nYour equation is: " << '(' << n1 << '/' << d1 << ')' << " + " << '(' << n2 << '/' << d2 << ')' << " = ";
+            cout << "\nYour equation is: " << '(' << n1 << '/' << d1 << ')' << " + " << '(' << n2 << '/' << d2 << ')';
 
             Add(n1, d1, n2, d2);
 
-            cout << n1 << '/' << d1;
+            cout << "\nyour solution is: " << n1 << '/' << d1;
         }
 
         //if user chooses SUBTRACT operation
         else if (MenuSelection == 2)
         {
-            cout << "\nYour equation is: " << '(' << n1 << '/' << d1 << ')' << " - " << '(' << n2 << '/' << d2 << ')' << " = ";
+            cout << "\nYour equation is: " << '(' << n1 << '/' << d1 << ')' << " - " << '(' << n2 << '/' << d2 << ')';
 
             Subtract(n1, d1, n2, d2);
 
-            cout << n1 << '/' << d1;
+            cout << "\nyour solution is: " << n1 << '/' << d1;
         }
 
         //if user chooses MULTIPLY operation
         else if (MenuSelection == 3)
         {
-            cout << "\nYour equation is: " << '(' << n1 << '/' << d1 << ')' << " x " << '(' << n2 << '/' << d2 << ')' << " = ";
+            cout << "\nYour equation is: " << '(' << n1 << '/' << d1 << ')' << " x " << '(' << n2 << '/' << d2 << ')';
 
             Multiply(n1, d1, n2, d2);
 
-            cout << n1 << '/' << d1;
+            cout << "\nyour solution is: " << n1 << '/' << d1;
         }
 
         //if user chooses DIVIDE operation
         else if (MenuSelection == 4)
         {
-            cout << "\nYour equation is: " << '(' << n1 << '/' << d1 << ')' << " / " << '(' << n2 << '/' << d2 << ')' << " = ";
+            cout << "\nYour equation is: " << '(' << n1 << '/' << d1 << ')' << " / " << '(' << n2 << '/' << d2 << ')';
 
             Divide(n1, d1, n2, d2);
 
-            cout << n1 << '/' << d1;
+            cout << "\nyour solution is: " << n1 << '/' << d1;
         }
         else
         {
-            cout << "Invalid Operation";
+            cout << "Invalid Operation"; //will display if  user inputs number other then 1-4 for menu selection
         }
         return;
     }
