@@ -1,3 +1,6 @@
+// Sixto Garcia
+// CS151 Project A
+
 #include <iostream>
 using namespace std;
 
