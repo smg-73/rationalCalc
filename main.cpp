@@ -69,6 +69,25 @@ void Multiply(int &n1, int &d1, int &n2, int &d2)
     }
 }
 
+//will divide fractions given by the user
+void Divide(int &n1, int &d1, int &n2, int &d2)
+{
+    n1 = n1 * d2; //multiplies first numerator with second denominator
+    d1 = d1 * n2; //multiplies first denominator with second numerator
+
+    int gcd = GCD(n1, d1); //calls function to get the GCD
+
+    n1 = n1 / gcd; //divides by the gcd to get simpliest form.
+    d1 = d1 / gcd;
+
+    if (d1 < 0 && n1 >= 0) //checks if denominator is a negative int while
+                           //numerator is positive
+    {
+        n1 = n1 * (-1); //switches the signs of numerator and denominator
+        d1 = d1 * (-1); //to avoid having a negative int in denominator
+    }
+}
+
 //main calculator function
 //Recieves input from user for fractions
 //displays menu of operations to choose from
