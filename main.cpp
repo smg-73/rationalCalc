@@ -5,7 +5,6 @@ using namespace std;
 //ask user to input a number for numerator and denominatior for each fraction
 void Calculator()
 {
-
     int n1, d1, n2, d2; //initializes variables used for fraction
 
     //ask user to input number and stores it in respective variable
@@ -20,11 +19,31 @@ void Calculator()
 
     cout << "Enter Denominator for second fraction: ";
     cin >> d2;
-}
 
+    //checks if user inputed a 0 for one of the denominators
+    //will display error message if true.
+    if (d1 == 0 || d2 == 0)
+    {
+        cout << "\nERROR: Cannot Divide By Zero!\n";
+    }
 
-int main()
-{
-  
-    return 0;
-}
+    else
+    {
+        // displays menu of the operations
+        //ask user to make selection from the menu
+        cout << "\nType the number for the operation you wish to perform from the menu below:\n\n";
+
+        cout << "1: ADD\n"
+             << "2: SUBTRACT\n"
+             << "3: MULTIPLY\n"
+             << "4: DIVIDE\n\n";
+
+        int MenuSelection;    //initializes variable for users menu selection
+        cin >> MenuSelection; //stores users selection in variable
+    }
+
+    int main()
+    {
+
+        return 0;
+    }
