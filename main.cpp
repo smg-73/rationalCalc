@@ -60,12 +60,12 @@ void Multiply(int &n1, int &d1, int &n2, int &d2)
     n1 = n1 * n2; //multiplies straight across for the numerators
     d1 = d1 * d2; //multiplies straight across for denominators
 
-    if (n1 == 0)
+    if (n1 == 0) //if n1 is zero, changes d1 to zero to have
     {
         d1 = 0;
     }
 
-    else
+    else //will only continue if n1 is not zero
     {
         int gcd = GCD(n1, d1); //calls function to get the GCD
 
@@ -86,13 +86,13 @@ void Divide(int &n1, int &d1, int &n2, int &d2)
     n1 = n1 * d2; //multiplies first numerator with second denominator
     d1 = d1 * n2; //multiplies first denominator with second numerator
 
-    if (d1 != 0)
+    if (d1 != 0) //will only continue if d1 is not zero
     {
-        if (n1 == 0)
+        if (n1 == 0) //if n1 is zero, changes d1 to zero to have
         {
             d1 = 0;
         }
-        else
+        else //will only continue if n1 is not zero
         {
             int gcd = GCD(n1, d1); //calls function to get the GCD
 
@@ -157,7 +157,7 @@ void Calculator()
 
             Add(n1, d1, n2, d2);
 
-            if (n1 == 0) //if n1 is 0 will display solution as just 0.
+            if (n1 == 0) //if numerator is 0 will display solution as just 0.
             {
                 cout << "\nYour solution is: " << n1;
             }
@@ -174,7 +174,7 @@ void Calculator()
 
             Subtract(n1, d1, n2, d2);
 
-            if (n1 == 0) //if n1 is 0 will display solution as just 0.
+            if (n1 == 0) //if numerator is 0 will display solution as just 0.
             {
                 cout << "\nYour solution is: " << n1;
             }
@@ -191,7 +191,7 @@ void Calculator()
 
             Multiply(n1, d1, n2, d2);
 
-            if (n1 == 0) //if n1 is 0 will display solution as just 0.
+            if (n1 == 0) //if numerator is 0 will display solution as just 0.
             {
                 cout << "\nYour solution is: " << n1;
             }
@@ -207,23 +207,28 @@ void Calculator()
             cout << "\nYour equation is: " << '(' << n1 << '/' << d1 << ')' << " / " << '(' << n2 << '/' << d2 << ')';
 
             Divide(n1, d1, n2, d2);
-            if (d1 == 0 && n1 != 0)
-            {
-                cout << "\nYour solution is: Undefined ::Can't Divide By Zero!::";
-            }
-            else if (n1 == 0) //if n1 is 0 will display solution as just 0.
+
+            if (n1 == 0) //if numerator is 0 will display solution as just 0.
             {
                 cout << "\nYour solution is: " << n1;
             }
+
+            else if (d1 == 0) // will diplay undefine message if 0 is in denominator
+            {
+                cout << "\nYour solution is: Undefined ::Can't Divide By Zero!::";
+            }
+
             else
             {
                 cout << "\nYour solution is: " << n1 << '/' << d1;
             }
         }
+
         else
         {
             cout << "Invalid Operation"; //will display if  user inputs number other then 1-4 for menu selection
         }
+
         return;
     }
 }
