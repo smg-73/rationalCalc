@@ -62,7 +62,6 @@ void Multiply(int &n1, int &d1, int &n2, int &d2)
 
     if (n1 == 0)
     {
-        n1 = 0;
         d1 = 0;
     }
 
@@ -91,7 +90,6 @@ void Divide(int &n1, int &d1, int &n2, int &d2)
     {
         if (n1 == 0)
         {
-            n1 = 0;
             d1 = 0;
         }
         else
@@ -159,7 +157,14 @@ void Calculator()
 
             Add(n1, d1, n2, d2);
 
-            cout << "\nYour solution is: " << n1 << '/' << d1;
+            if (n1 == 0) //if n1 is 0 will display solution as just 0.
+            {
+                cout << "\nYour solution is: " << n1;
+            }
+            else
+            {
+                cout << "\nYour solution is: " << n1 << '/' << d1;
+            }
         }
 
         //if user chooses SUBTRACT operation
@@ -169,7 +174,14 @@ void Calculator()
 
             Subtract(n1, d1, n2, d2);
 
-            cout << "\nYour solution is: " << n1 << '/' << d1;
+            if (n1 == 0) //if n1 is 0 will display solution as just 0.
+            {
+                cout << "\nYour solution is: " << n1;
+            }
+            else
+            {
+                cout << "\nYour solution is: " << n1 << '/' << d1;
+            }
         }
 
         //if user chooses MULTIPLY operation
@@ -179,7 +191,14 @@ void Calculator()
 
             Multiply(n1, d1, n2, d2);
 
-            cout << "\nYour solution is: " << n1 << '/' << d1;
+            if (n1 == 0) //if n1 is 0 will display solution as just 0.
+            {
+                cout << "\nYour solution is: " << n1;
+            }
+            else
+            {
+                cout << "\nYour solution is: " << n1 << '/' << d1;
+            }
         }
 
         //if user chooses DIVIDE operation
@@ -191,6 +210,10 @@ void Calculator()
             if (d1 == 0 && n1 != 0)
             {
                 cout << "\nYour solution is: Undefined ::Can't Divide By Zero!::";
+            }
+            else if (n1 == 0) //if n1 is 0 will display solution as just 0.
+            {
+                cout << "\nYour solution is: " << n1;
             }
             else
             {
