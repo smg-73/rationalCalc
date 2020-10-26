@@ -29,7 +29,7 @@ void Add(int &n1, int &d1, int &n2, int &d2)
     n1 = n1 / gcd; //divides by the gcd to get simpliest form.
     d1 = d1 / gcd;
 
-    if (d1 < 0 && n1 >= 0) //checks if denominator is a negative int while numerator is positive
+    if (d1 < 0) //checks if denominator is negative
     {
         n1 = n1 * (-1); //switches the signs of numerator and denominator
         d1 = d1 * (-1); //to avoid having a negative int in denominator
@@ -47,7 +47,7 @@ void Subtract(int &n1, int &d1, int &n2, int &d2)
     n1 = n1 / gcd; //divides by the gcd to get simpliest form.
     d1 = d1 / gcd;
 
-    if (d1 < 0 && n1 >= 0) //checks if denominator is a negative int while numerator is positive
+    if (d1 < 0) //checks if denominator is negative
     {
         n1 = n1 * (-1); //switches the signs of numerator and denominator
         d1 = d1 * (-1); //to avoid having a negative int in denominator
@@ -60,15 +60,24 @@ void Multiply(int &n1, int &d1, int &n2, int &d2)
     n1 = n1 * n2; //multiplies straight across for the numerators
     d1 = d1 * d2; //multiplies straight across for denominators
 
-    int gcd = GCD(n1, d1); //calls function to get the GCD
-
-    n1 = n1 / gcd; //divides by the gcd to get simpliest form.
-    d1 = d1 / gcd;
-
-    if (d1 < 0 && n1 >= 0) //checks if denominator is a negative int while numerator is positive
+    if (n1 == 0)
     {
-        n1 = n1 * (-1); //switches the signs of numerator and denominator
-        d1 = d1 * (-1); //to avoid having a negative int in denominator
+        n1 = 0;
+        d1 = 0;
+    }
+
+    else
+    {
+        int gcd = GCD(n1, d1); //calls function to get the GCD
+
+        n1 = n1 / gcd; //divides by the gcd to get simpliest form.
+        d1 = d1 / gcd;
+
+        if (d1 < 0) //checks if denominator is negative
+        {
+            n1 = n1 * (-1); //switches the signs of numerator and denominator
+            d1 = d1 * (-1); //to avoid having a negative int in denominator
+        }
     }
 }
 
@@ -78,16 +87,26 @@ void Divide(int &n1, int &d1, int &n2, int &d2)
     n1 = n1 * d2; //multiplies first numerator with second denominator
     d1 = d1 * n2; //multiplies first denominator with second numerator
 
-    int gcd = GCD(n1, d1); //calls function to get the GCD
-
-    n1 = n1 / gcd; //divides by the gcd to get simpliest form.
-    d1 = d1 / gcd;
-
-    if (d1 < 0 && n1 >= 0) //checks if denominator is a negative int while
-                           //numerator is positive
+    if (d1 != 0)
     {
-        n1 = n1 * (-1); //switches the signs of numerator and denominator
-        d1 = d1 * (-1); //to avoid having a negative int in denominator
+        if (n1 == 0)
+        {
+            n1 = 0;
+            d1 = 0;
+        }
+        else
+        {
+            int gcd = GCD(n1, d1); //calls function to get the GCD
+
+            n1 = n1 / gcd; //divides by the gcd to get simpliest form.
+            d1 = d1 / gcd;
+        }
+
+        if (d1 < 0) //checks if denominator is negative
+        {
+            n1 = n1 * (-1); //switches the signs of numerator and denominator
+            d1 = d1 * (-1); //to avoid having a negative int in denominator
+        }
     }
 }
 
@@ -169,8 +188,14 @@ void Calculator()
             cout << "\nYour equation is: " << '(' << n1 << '/' << d1 << ')' << " / " << '(' << n2 << '/' << d2 << ')';
 
             Divide(n1, d1, n2, d2);
-
-            cout << "\nYour solution is: " << n1 << '/' << d1;
+            if (d1 == 0 && n1 != 0)
+            {
+                cout << "\nYour solution is: Undefined ::Can't Divide By Zero!::";
+            }
+            else
+            {
+                cout << "\nYour solution is: " << n1 << '/' << d1;
+            }
         }
         else
         {
