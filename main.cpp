@@ -60,7 +60,7 @@ void Multiply(int &n1, int &d1, int &n2, int &d2)
     n1 = n1 * n2; //multiplies straight across for the numerators
     d1 = d1 * d2; //multiplies straight across for denominators
 
-    if (n1 == 0) //if n1 is zero, changes d1 to zero to have
+    if (n1 == 0) //if n1 is zero, changes d1 to zero to as well.
     {
         d1 = 0;
     }
@@ -88,7 +88,7 @@ void Divide(int &n1, int &d1, int &n2, int &d2)
 
     if (d1 != 0) //will only continue if d1 is not zero
     {
-        if (n1 == 0) //if n1 is zero, changes d1 to zero to have
+        if (n1 == 0) //if n1 is zero, changes d1 to zero as well.
         {
             d1 = 0;
         }
