@@ -60,12 +60,7 @@ void Multiply(int &n1, int &d1, int &n2, int &d2)
     n1 = n1 * n2; //multiplies straight across for the numerators
     d1 = d1 * d2; //multiplies straight across for denominators
 
-    if (n1 == 0) //if n1 is zero, changes d1 to zero to as well.
-    {
-        d1 = 0;
-    }
-
-    else //will only continue if n1 is not zero
+    if (n1 != 0) //will only continue if n1 is not zero
     {
         int gcd = GCD(n1, d1); //calls function to get the GCD
 
@@ -86,27 +81,21 @@ void Divide(int &n1, int &d1, int &n2, int &d2)
     n1 = n1 * d2; //multiplies first numerator with second denominator
     d1 = d1 * n2; //multiplies first denominator with second numerator
 
-    if (d1 != 0) //will only continue if d1 is not zero
+    if (d1 != 0 && n1 != 0) //will only continue if d1 and n1 are not zero
     {
-        if (n1 == 0) //if n1 is zero, changes d1 to zero as well.
-        {
-            d1 = 0;
-        }
-        else //will only continue if n1 is not zero
-        {
-            int gcd = GCD(n1, d1); //calls function to get the GCD
+        int gcd = GCD(n1, d1); //calls function to get the GCD
 
-            n1 = n1 / gcd; //divides by the gcd to get simpliest form.
-            d1 = d1 / gcd;
-        }
+        n1 = n1 / gcd; //divides by the gcd to get simpliest form.
+        d1 = d1 / gcd;
+    }
 
-        if (d1 < 0) //checks if denominator is negative
-        {
-            n1 = n1 * (-1); //switches the signs of numerator and denominator
-            d1 = d1 * (-1); //to avoid having a negative int in denominator
-        }
+    if (d1 < 0) //checks if denominator is negative
+    {
+        n1 = n1 * (-1); //switches the signs of numerator and denominator
+         d1 = d1 * (-1); //to avoid having a negative int in denominator
     }
 }
+
 
 //main calculator function
 //Recieves input from user for fractions
